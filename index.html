@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         <script type="text/javascript" src="js/common.js"></script>
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color: #f2f4f7;" id="body">
+
+       
+<div id="main">
+  <div id="mySidenav" class="sidenav">
+    
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <li><a href="#" id="dash" onclick="menu_tab_change('#dash')" >DASHBOARD</a></li>
+  <li><a href="html/village.html"  id="vill" onclick="menu_tab_change('vill')">VILLAGES</a></li>
+  <li><a href="html/activities.html"  id="ract" onclick="menu_tab_change('#ract')">ACTIVITIES</a></li>
+  <li><a href="html/notifications.html"  id="ntf" onclick="menu_tab_change('#ntf')">NOTIFICATIONS</a></li>
+  <li><a href="html/complaints.html"  id="cmp" onclick="menu_tab_change('#cmp')">COMPLAINTS</a></li>
+  <li><a href="html/videos.html"  id="vid" onclick="menu_tab_change('#vid')">VIDEOS</a></li>
+  <li><a href="html/memberofparliament.html"  id="mp" onclick="menu_tab_change('#mp')">MEMBER OF PARLIAMENT</a></li>
+  
+</div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+
+
+<div id= "top-navigation-bar">
+  <button  class="btn btn-primary" id ="btnhead">
+    Edit profile
+  </button>
+   <button  id="btnhead" class="btn btn-danger" onclick="">
+    Logout
+  </button>
+</div>
+  
+
+  <div id="main-item">
+    
+    <div class="main-banner">
+
+      <img src="image/mainbanner.jpg">
+    </div>
+
+    <div class="col-sm-5" id="single-main">
+      <h2>Total Adopted Villages</h2>
+      <h1>367</h1>
+    </div>
+    
+
+    <div class="col-sm-5" id="single-main">
+      <h2>Complaints(Today)</h2>
+      <h1>67</h1>
+    </div>
+    
+    
+      
+
+  </div>
+
+</div>
+
+
+
+</body>
+</html> 

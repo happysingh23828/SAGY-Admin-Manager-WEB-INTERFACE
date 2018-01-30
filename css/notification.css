@@ -1,0 +1,78 @@
+#mpadd
+{
+	width: 100%;
+	margin-right: 30px;
+	font-size: 20px;
+	margin: 30px;
+	box-shadow: 10px 10px 10px 10px gray;
+
+}
+
+#search{
+    width: 30%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+
+#search:focus{
+    
+    width: 100%;
+
+}
+
+
+#tableshow
+{
+	box-shadow: 5px 5px 5px 5px ;
+	margin: 30px;
+}
+
+#tableshow td
+{
+
+	font-size: 16px;
+	font-weight: bold;
+	margin-left: 8px;
+
+}
+
+#tableshow td button
+{
+	margin-left: 8px;
+	font-weight: bold;
+	font-size: 15px;
+	
+}
+
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  display: none;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,151 @@
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #E8EAF6;
+}
+
+
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    display: block;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    background-image: url("../image/backgroundsidenav.png");
+}
+
+.sidenav li  a {
+    padding: 10px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+    font-family:  ;
+    font-weight: bold;
+     text-decoration: bold;
+     text-align: left;
+      border: 2px solid #fff;
+      opacity: 0.7;
+
+}
+
+.sidenav  li
+{
+    
+   
+   margin-left: 20px;
+   margin-right: 20px; 
+
+}
+
+
+.sidenav li a:hover {
+    
+    text-decoration: none;
+    
+    border: 5px solid #fff;
+     
+    border-width: 3px;
+    border : 3px solid red;
+    border-radius: 10px;
+    
+    
+
+}
+
+#main-item
+{
+    
+margin-left: 0px; 
+    
+}
+
+#main-item #single-main
+{
+    background-color: #fff;
+    margin: 20px;
+    box-shadow: 5px 5px 5px 5px;
+    height: 250px;
+}
+
+
+ .main-banner img{
+    
+    margin:20px;
+    
+    height: 250px;  
+    width: 100%; 
+    box-shadow: 5px 5px 5px 5px;
+}
+
+#main-item #single-main h2
+{
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 3px 3px 3px 3px gray;
+        
+}
+
+#main-item #single-main h1
+{
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 100px;
+        
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    
+}
+
+
+#btnhead
+{
+    margin-left: 20px;
+
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+   
+    margin-left: 250px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px; text-decoration: none;}
+}
+
+#top-navigation-bar{
+    
+    position: absolute;
+    top:0px;
+    right: 0px;
+    
+    text-align: right;
+    padding :15px;
+
+}
+#sign-in
+{
+    padding-left: 10px;
+    padding-right:  10px;
+    background-color: #D50000;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+}

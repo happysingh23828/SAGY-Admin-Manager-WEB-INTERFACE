@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title> SAGY Videos</title></time>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../css/videos.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         <script type="text/javascript" src="../js/common.js"></script>
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color: #f2f4f7;" id="body">
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button  type="button" class="close" data-dismiss="modal" id="close-btn">&times;</button>
+          <h4 class="modal-title" id="model-head">Enter Notification Details</h4>
+        </div>
+        <div class="modal-body">
+          
+             
+
+          
+                  <label >Enter Video Title </label>
+                  <input type="text" class="form-control" id="videotitle">
+                
+                  <label>Enter Youtube ID</label>
+                  <input type="text" class="form-control" id="youtubeid">
+             
+                
+                <button type="submit" class="btn btn-danger" data-dismiss="modal"  id="modal-button">Add Video</button>
+              
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+
+  <!-- model ended -->
+
+
+<div id="main">
+  <div id="mySidenav" class="sidenav">
+    
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <li><a href="../index.html" id="dash" onclick="menu_tab_change('#dash')" >DASHBOARD</a></li>
+  <li><a href="village.html"  id="vill" onclick="menu_tab_change('vill')">VILLAGES</a></li>
+  <li><a href="activities.html"  id="ract" onclick="menu_tab_change('#ract')">ACTIVITIES</a></li>
+  <li><a href="notifications.html"  id="ntf" onclick="menu_tab_change('#ntf')">NOTIFICATIONS</a></li>
+  <li><a href="complaints.html"  id="cmp" onclick="menu_tab_change('#cmp')">COMPLAINTS</a></li>
+  <li><a href="#  id="vid" onclick="menu_tab_change('#vid')">VIDEOS</a></li>
+  <li><a href="memberofparliament.html"  id="mp" onclick="menu_tab_change('#mp')">MEMBER OF PARLIAMENT</a></li>
+  
+</div>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<div id= "top-navigation-bar">
+  <button  class="btn btn-primary" id ="btnhead">
+    Edit profile
+  </button>
+   <button  id="btnhead" class="btn btn-danger" onclick="">
+    Logout
+  </button>
+</div>
+        
+        <button data-toggle="modal" data-target="#myModal" class="btn btn-primary" id="mpadd">Add New Youtube Video</button>
+
+        <div>
+        
+        <table class="table"  id="tableshow">
+        <thead>
+            <tr style="background-color: black;padding : 30px;color: #fff">
+            <th>DATE</th>
+            <th>TITLE</th>
+            <th>Youtube  ID</th>
+            <th>ACTION</th>
+            </tr>
+            
+
+    </thead>
+
+      </table>
+    </div>
+
+  
+
+
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-messaging.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC4_ha8H0PViLj4wX6_oNShgiB_YdnhR88",
+    authDomain: "sagy-9be59.firebaseapp.com",
+    databaseURL: "https://sagy-9be59.firebaseio.com",
+    projectId: "sagy-9be59",
+    storageBucket: "sagy-9be59.appspot.com",
+    messagingSenderId: "867106039420"
+  };
+  firebase.initializeApp(config);
+</script>
+
+          <script type="text/javascript" src="../js/common.js"></script>
+           <script type="text/javascript" src="../js/videos.js"></script>
+</body>
+</html> 
