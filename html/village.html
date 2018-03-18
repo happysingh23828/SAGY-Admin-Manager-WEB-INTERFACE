@@ -4,8 +4,12 @@
         <title> SAGY Villages</title></time>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../css/common.css">
+         <link rel="stylesheet" type="text/css" href="../css/village.css">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-         <script type="text/javascript" src="../js/common.js"></script>
+         
+
+
          <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -40,14 +44,133 @@
   <button  class="btn btn-primary" id ="btnhead">
     Edit profile
   </button>
-   <button  id="btnhead" class="btn btn-danger" onclick="">
+   <button  id="btnhead" class="btn btn-danger" onclick="signout()">
     Logout
   </button>
 </div>
   
 
+  <!--village page-->
+   <!-- Trigger the modal with a button -->
+   <div class="header">
+  <button data-toggle="modal" data-target="#myModal" class="btn btn-primary" >Add Village Information</button>
+ </div>
+
+<div class="container">
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+         <button  type="button" class="close" data-dismiss="modal" id="close-btn">&times;</button>
+          <h4 class="modal-title">ADD VILLAGE DETAIL</h4>
+        </div>
+        <div class="modal-body">
+          <label>Enter Village Name</label>
+          <input type="email" placeholder="Village name" name="email1" id="village_name">
+          <label>Enter Adobted Village*</label>
+          <input type="text" name="email1" placeholder="Adopted By" id="mp_name"><br>
+
+           <label>Enter Thasil/Block Name*</label>
+          <input type="text" name="email1" placeholder="Tahsil/Block" id="thasil"><br>
+
+           <label>Constituency*</label>&nbsp;&nbsp;&nbsp;&nbsp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;  <label>State*</label><br>
+          <input type="text" name="fname1" placeholder="Constituency" id ="constituency">
+          <input type="text" name="fname1" placeholder="State" id="state"><br>
+
+           <label>Party Name*</label>
+          <input type="text" placeholder="Party" name="email1" id="party"><br>
+
+
+         <div id="upload_image">
+                  <label>Upload Image</label>
+                  <input type="file"  accept="image/*" class="form-control" id="village">
+          </div>
+
+          <div id="update_checkbox_div" style="display: none;">
+                <input type="checkbox" id="update_checkbox" onclick="check()"><p>Update Image</p>  
+                </div>
+
+
+                <div id="update_image" style="display: none;"> 
+                  <label>Update Image</label>
+                  <input type="file"  accept="image/*" class="form-control" id="villageupdate" >
+                </div>
+
+
+              <button type="button" class="btn btn-default" id="modal-button" onclick="add_village()" >Add Village</button>
+
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+<!-- Search Adobted village-->
+
+
+        <!--<button data-toggle="modal" data-target="#myModal" class="btn btn-primary" id="mpadd">Add new Village Details</button>-->
+    <div>
+        <input  id="search" name="search" style="margin: 35px;" type="text" name="" placeholder="Search Adobted Village  Here.....">
+         <button style="margin: 0px; padding: 10px 20px 10px 20px;font-size: 15px;" class="btn btn-danger" onclick="searchvillage();">Search</button>
+
+         <button style="margin: 30px; padding: 10px 20px 10px 20px;font-size: 15px;" class="btn btn-success" onclick="searchmpall();">All User List</button>
+       </div>
+
+        
+
+<!-- Show data in table-->
+<div id="showtable">
+        
+        <table class="table"  id="tableshow">
+        <thead>
+            <tr style="background-color: blue;padding : 30px;color: #fff">
+            <th>Adobted_By</th>
+            <th>Constituency</th>
+            <th>Party</th>
+            <th>State</th>
+            <th>Village</th>
+            <th>Thasil</th>
+            <th>Action</th>
+            </tr>
+         </thead>
+
+      </table>
+ </div>
+
 
 </div>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-messaging.js"></script>
+
+
+
+<script>
+  // Initialize Firebase<input type="Submit" value="Register" onclick="Register()" name="reg"><br>
+  var config = {
+    apiKey: "AIzaSyC4_ha8H0PViLj4wX6_oNShgiB_YdnhR88",
+    authDomain: "sagy-9be59.firebaseapp.com",
+    databaseURL: "https://sagy-9be59.firebaseio.com",
+    projectId: "sagy-9be59",
+    storageBucket: "sagy-9be59.appspot.com",
+    messagingSenderId: "867106039420"
+  };
+  firebase.initializeApp(config);
+</script>
+<script type="text/javascript" src="../js/village.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+
 
 
 

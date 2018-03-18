@@ -1,0 +1,128 @@
+
+.modal-body{
+    color:black;
+    padding-top:30px;
+    padding-left:60px;
+    font-size:15px;
+    margin:auto;
+    background:white;
+    width:500px;
+    border-radius:15px;
+    opacity:.8; 
+}
+.modal-body input{
+     margin-top:0px;
+     width:200px;
+     height:40px;
+    font-size:15px;
+    border-radius:5px;
+
+}
+.modal-body input[name="email1"]{
+    width:400px;
+    display: inline-block;
+}
+.modal-body input[name="sex1"]{
+    margin-top:0px;
+    width:15px;
+}
+.modal-body input[type="checkbox"]{
+    margin-top:0px;
+    width:15px;
+}
+.modal-body button[type="button"]{
+    margin:5px;
+    width:150px;
+    border-radius:50px;
+    margin-left:280px;
+    height:50px;
+    background:blue;
+    color:white;
+}
+.modal-body button[type="button"]:hover{
+     
+    background:green;
+    color:blue;
+     
+}
+
+.header button {
+
+    margin-right: 30px;
+    margin: 30px;
+    font-size: 20px;
+    width: 100%;
+    background:#337ab7 ;
+     box-shadow: 10px 10px 10px 10px gray;
+     border: 1px solid transparent;
+     text-align: center;
+     display: inline-block;
+     border-radius: 4px;
+
+
+}
+
+
+
+ 
+
+.model-content{
+
+}
+#showtable{
+
+    margin-top: 35px;
+}
+
+
+#search{
+    width: 30%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+
+#search:focus{
+    
+    width: 60%;
+
+}
+
+
+
+
+
+#tableshow
+{
+    box-shadow: 5px 5px 5px 5px ;
+    margin: 30px;
+}
+
+#tableshow td
+{
+
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 8px;
+
+}
+
+#tableshow td button
+{
+    margin-left: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    
+}
+
+
+ 

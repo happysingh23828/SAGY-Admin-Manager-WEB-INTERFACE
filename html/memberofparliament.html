@@ -83,10 +83,23 @@
                 
                 <label>Village Adopted</label>
                   <input type="text" class="form-control" id="mpadoptedvillage">
-             
-                  <label>Upload Profile Picture</label>
-                  <input type="file"  accept="image/*" class="form-control" id="mpimage">
                 
+                <div id="upload_image">
+                  <label>Upload Profile Picture</label>
+                  <input type="file"  accept="image/*" class="form-control" id="mpimagenew">
+                </div>
+
+                <div id="update_checkbox_div">
+                <input type="checkbox" id="update_checkbox" onclick="check()"><p>Update Image</p>  
+                </div>
+
+
+                <div id="update_image"> 
+                  <label>Update Profile Picture</label>
+                  <input type="file"  accept="image/*" class="form-control" id="mpimageupdate" >
+                </div>
+                
+
                 <button type="submit" class="btn btn-danger" data-dismiss="modal"  id="modal-button">Add Information</button>
               
 
@@ -101,7 +114,7 @@
 
   <!-- model ended -->
      
-        <button data-toggle="modal" data-target="#myModal" class="btn btn-primary" id="mpadd">Add new MP's</button>
+        <button data-toggle="modal" data-target="#myModal" class="btn btn-primary" id="mpadd" onclick="addmp()">Add new MP's</button>
           
         <div>  
         <input class="col-sm-7" id="search" name="search" style="margin: 30px;" type="text" name="" placeholder="Search  Member of Parliament  Here.....">

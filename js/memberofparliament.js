@@ -21,6 +21,23 @@
     });
 });
 
+	function addmp()
+	{
+
+
+			$(document).ready(function(){
+
+			document.getElementById('upload_image').style.display = "block";
+			document.getElementById('update_checkbox_div').style.display="none";
+			document.getElementById('update_image').style.display="none";
+
+			
+			
+	});	
+
+
+	}
+
 
 function deletemp(id)
 {
@@ -40,9 +57,44 @@ function deletemp(id)
 	}
 }
 
-var wanttoupdateid;
+
+
+
+function check()
+{
+	var update_image_checkbox = document.getElementById("update_checkbox").checked;
+
+	
+	if(update_image_checkbox)
+	{
+		document.getElementById('update_image').style.display="block";
+	}
+	else
+	{
+		document.getElementById('update_image').style.display="none";
+	}
+
+}
+
+
+
+
+
+var wanttoupdateid,lastimage;
 function updatemp(id){
 
+
+	$(document).ready(function(){
+
+			document.getElementById('upload_image').style.display = "none";
+			document.getElementById('update_checkbox_div').style.display="block";
+			
+			
+			
+	});
+	
+
+		
 	var ref = firebase.database().ref().child("mp").child(id);
 
 	ref.once('value',function(data){
@@ -54,7 +106,8 @@ function updatemp(id){
 	var state = data.child("state").val();
 	var party = data.child("party").val();
 	var villageadopted = data.child("villageadopted").val();
-	var image = $("#mpimage")[0].files[0];
+	lastimage = data.child("image").val();
+	
 
 
 	$(document).ready(function(){
@@ -66,6 +119,9 @@ function updatemp(id){
 	document.getElementById('mpstate').value=state;
 	document.getElementById('mpparty').value=party;
 	document.getElementById('mpadoptedvillage').value=villageadopted;
+
+
+
 
     $('#modal-button').text('Update');
 
@@ -83,10 +139,22 @@ function updatemp(id){
 
 document.getElementById('modal-button').onclick = function() {
 
+
+
+	
+
+
+
 	var id = wanttoupdateid;
 	var btn  = $('#modal-button').text();
 	if(btn=='Update')
 	{
+
+
+			if(document.getElementById("update_checkbox").checked==true)
+			{
+				
+
 			var name1 = document.getElementById('mpname').value;
 			var dob1 = document.getElementById('mpdob').value;
 			var residence1 = document.getElementById('mpaddress').value;
@@ -94,7 +162,7 @@ document.getElementById('modal-button').onclick = function() {
 			var state1 = document.getElementById('mpstate').value;
 			var party1 = document.getElementById('mpparty').value;
 			var villageadopted1 = document.getElementById('mpadoptedvillage').value;
-			var imagenew = $("#mpimage")[0].files[0];
+			var imagenew = $("#mpimageupdate")[0].files[0];
 			var imageurlnew;
 
 			name1 = name1.toLowerCase();
@@ -126,16 +194,90 @@ document.getElementById('modal-button').onclick = function() {
 						document.getElementById('mpstate').value='';
 						document.getElementById('mpparty').value='';
 						document.getElementById('mpadoptedvillage').value='';
-						document.getElementById('mpimage').value='';
+						document.getElementById('mpimageupdate').value='';
+
+						$(document).ready(function(){
+
+							document.getElementById('upload_image').style.display = "block";
+							document.getElementById('update_checkbox_div').style.display="none";
+							
+							
+							
+							});
+
 				});
 				});
+
+
+
+
+			}	
+
+			if(document.getElementById("update_checkbox").checked==false)
+			{
+
+					var name1 = document.getElementById('mpname').value;
+					var dob1 = document.getElementById('mpdob').value;
+					var residence1 = document.getElementById('mpaddress').value;
+					var constituency1 = document.getElementById('mpconstituency').value;
+					var state1 = document.getElementById('mpstate').value;
+					var party1 = document.getElementById('mpparty').value;
+					var villageadopted1 = document.getElementById('mpadoptedvillage').value;
+					
+					name1 = name1.toLowerCase();
+
+
+							firebase.database().ref().child("mp").child(id).set({
+
+							name:name1,
+							dob:dob1,
+							address:residence1,
+							constituency :constituency1,
+							state : state1,
+							party:party1,
+							villageadopted :villageadopted1,
+							image : lastimage
+							}).then (function(data)
+						{
+							alert("Data Updated");
+							$('#modal-button').text('Add Information');
+							 // clearning the modal form
+							 document.getElementById('mpname').value='';
+								document.getElementById('mpdob').value='';
+								document.getElementById('mpaddress').value='';
+								document.getElementById('mpconstituency').value='';
+								document.getElementById('mpstate').value='';
+								document.getElementById('mpparty').value='';
+								document.getElementById('mpadoptedvillage').value='';
+								document.getElementById('mpimagenew').value='';
+
+									$(document).ready(function(){
+
+							document.getElementById('upload_image').style.display = "block";
+							document.getElementById('update_checkbox_div').style.display="none";
+							document.getElementById('update_image').style.display="none";
+							
+							
+							
+							});
+						});
+						
+
+
+
+			}
+
+
+			
 
 	}
 
 	else if(btn=='Add Information')
 	{
 		
-			
+		
+
+
 	var name = document.getElementById('mpname').value;
 	var dob = document.getElementById('mpdob').value;
 	var residence = document.getElementById('mpaddress').value;
@@ -143,7 +285,7 @@ document.getElementById('modal-button').onclick = function() {
 	var state = document.getElementById('mpstate').value;
 	var party = document.getElementById('mpparty').value;
 	var villageadopted = document.getElementById('mpadoptedvillage').value;
-	var image = $("#mpimage")[0].files[0];
+	var image = $("#mpimagenew")[0].files[0];
 	var imageurl;
 	name = name.toLowerCase();
 	
@@ -200,12 +342,20 @@ document.getElementById('close-btn').onclick = function() {
 						document.getElementById('mpstate').value='';
 						document.getElementById('mpparty').value='';
 						document.getElementById('mpadoptedvillage').value='';
-						document.getElementById('mpimage').value='';
+						document.getElementById('mpimagenew').value='';
+						document.getElementById('mpimageupdate').value='';
 						$('#modal-button').text('Add Information');
-					 
 
 
 
+						$(document).ready(function(){
+
+							document.getElementById('upload_image').style.display = "block";
+							document.getElementById('update_checkbox_div').style.display="none";
+							
+							window.location="memberofparliament.html"
+							
+							});
 	}
 
 

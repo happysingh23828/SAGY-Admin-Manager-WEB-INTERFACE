@@ -4,8 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="css/common.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-         <script type="text/javascript" src="js/common.js"></script>
-         <!-- Latest compiled and minified CSS -->
+                 <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
         <!-- jQuery library -->
@@ -13,6 +12,7 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 </head>
 <body style="background-color: #f2f4f7;" id="body">
@@ -39,7 +39,7 @@
   <button  class="btn btn-primary" id ="btnhead">
     Edit profile
   </button>
-   <button  id="btnhead" class="btn btn-danger" onclick="">
+   <button  id="btnhead" class="btn btn-danger" onclick="signout()">
     Logout
   </button>
 </div>
@@ -69,6 +69,24 @@
   </div>
 
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC4_ha8H0PViLj4wX6_oNShgiB_YdnhR88",
+    authDomain: "sagy-9be59.firebaseapp.com",
+    databaseURL: "https://sagy-9be59.firebaseio.com",
+    projectId: "sagy-9be59",
+    storageBucket: "sagy-9be59.appspot.com",
+    messagingSenderId: "867106039420"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript" src="js/index.js"></script>
 
 
 
