@@ -7,18 +7,43 @@
     var state = childSnapshot.child("state").val();
     var adoptedvillage = childSnapshot.child("villageadopted").val();
     
-    name = name.toLowerCase();
+    if(adoptedvillage=="")
+    {
+    	name = name.toLowerCase();
 
 
-    id =  '\''+id+'\'';
+	    id =  '\''+id+'\'';
+	    
+	    $(document).ready(function(){
+
+
+	    		$('#tableshow').append(
+	    			'<thead><tr><td>'+name +'</td><td>'+constituency+'</td><td>'+state+'</td><td>'+adoptedvillage+'</td><td><button class="btn btn-primary" onClick="updatemp('+id+')">Update</button><button class="btn btn-danger" onClick="deletemp('+id+')">Delete</button></td></tr></thead>'
+	    			);
+	    });
+    }
+    else
+    {
+
+    	firebase.database().ref().child("adopted_village").child(adoptedvillage).once('value',function(data){
+
+    			name = name.toLowerCase();
+    			var villname = data.child("village").val();
+
+			    id =  '\''+id+'\'';
+			    
+			    $(document).ready(function(){
+
+
+			    		$('#tableshow').append(
+			    			'<thead><tr><td>'+name +'</td><td>'+constituency+'</td><td>'+state+'</td><td>'+villname+'</td><td><button class="btn btn-primary" onClick="updatemp('+id+')">Update</button><button class="btn btn-danger" onClick="deletemp('+id+')">Delete</button></td></tr></thead>'
+			    			);
+			    });
+
+
+    	});
+    }
     
-    $(document).ready(function(){
-
-
-    		$('#tableshow').append(
-    			'<thead><tr><td>'+name +'</td><td>'+constituency+'</td><td>'+state+'</td><td>'+adoptedvillage+'</td><td><button class="btn btn-primary" onClick="updatemp('+id+')">Update</button><button class="btn btn-danger" onClick="deletemp('+id+')">Delete</button></td></tr></thead>'
-    			);
-    });
 });
 
 	function addmp()
@@ -256,6 +281,7 @@ document.getElementById('modal-button').onclick = function() {
 							document.getElementById('upload_image').style.display = "block";
 							document.getElementById('update_checkbox_div').style.display="none";
 							document.getElementById('update_image').style.display="none";
+							window.location="memberofparliament.html"
 							
 							
 							
@@ -316,6 +342,7 @@ document.getElementById('modal-button').onclick = function() {
 						document.getElementById('mpparty').value='';
 						document.getElementById('mpadoptedvillage').value='';
 						document.getElementById('mpimage').value='';
+						window.location="memberofparliament.html"
 				});
 
 
@@ -353,9 +380,11 @@ document.getElementById('close-btn').onclick = function() {
 							document.getElementById('upload_image').style.display = "block";
 							document.getElementById('update_checkbox_div').style.display="none";
 							
-							window.location="memberofparliament.html"
+							$("#myModal").modal('hide');
 							
 							});
+
+
 	}
 
 
@@ -374,12 +403,36 @@ function searchmp()
     var constituency = childSnapshot.child("constituency").val();
     var state = childSnapshot.child("state").val();
     var adoptedvillage = childSnapshot.child("villageadopted").val();
-    
-    id =  '\''+id+'\'';
+
+    if(adoptedvillage=="")
+    {
+    	name = name.toLowerCase();
+
+
+	    id =  '\''+id+'\'';
+		 document.getElementById('tableshow').innerHTML = '<thead><tr style="background-color: black;padding : 30px;color: #fff"><th>NAME</th><th>CONSTITUENCY</th><th>STATE</th><th>ADOPTED VILLAGE</th><th>ACTION</th></tr></thead><thead><tr><td>'+name +'</td><td>'+constituency+'</td><td>'+state+'</td><td>'+adoptedvillage+'</td><td><button class="btn btn-primary" onClick="updatemp('+id+')">Update</button><button class="btn btn-danger" onClick="deletemp('+id+')">Delete</button></td></tr></thead>';
+	   	
+	  	 document.getElementById('search').value='';
+	    
+    }
+    else
+    {
+
+    	firebase.database().ref().child("adopted_village").child(adoptedvillage).once('value',function(data){
+
+    			name = name.toLowerCase();
+    			var villname = data.child("village").val();
+
+			    id =  '\''+id+'\'';
    
-  	document.getElementById('tableshow').innerHTML = '<thead><tr style="background-color: black;padding : 30px;color: #fff"><th>NAME</th><th>CONSTITUENCY</th><th>STATE</th><th>ADOPTED VILLAGE</th><th>ACTION</th></tr></thead><thead><tr><td>'+name +'</td><td>'+constituency+'</td><td>'+state+'</td><td>'+adoptedvillage+'</td><td><button class="btn btn-primary" onClick="updatemp('+id+')">Update</button><button class="btn btn-danger" onClick="deletemp('+id+')">Delete</button></td></tr></thead>';
-   	
-  	 document.getElementById('search').value='';
+			  	document.getElementById('tableshow').innerHTML = '<thead><tr style="background-color: black;padding : 30px;color: #fff"><th>NAME</th><th>CONSTITUENCY</th><th>STATE</th><th>ADOPTED VILLAGE</th><th>ACTION</th></tr></thead><thead><tr><td>'+name +'</td><td>'+constituency+'</td><td>'+state+'</td><td>'+villname+'</td><td><button class="btn btn-primary" onClick="updatemp('+id+')">Update</button><button class="btn btn-danger" onClick="deletemp('+id+')">Delete</button></td></tr></thead>';
+			   	
+			  	 document.getElementById('search').value='';
+
+    	});
+    }
+    
+   
 					
 });
 }

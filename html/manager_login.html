@@ -30,7 +30,7 @@
 <body>
 	
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('https://www.thebetterindia.com/wp-content/uploads/2017/02/Wayanadu-Hills-Kerala-honeymoon-packages-1024x640.jpg');">
+		<div class="container-login100" style="background-image: url(https://www.xmple.com/wallpaper/purple-blue-gradient-linear-1920x1080-c2-9370db-00ced1-a-135-f-14.svg);">
 			<div class="wrap-login100">
 				<div class="login100-form validate-form">
 					<span class="login100-form-logo">
@@ -51,12 +51,16 @@
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
-					<div class="contact100-form-checkbox">
-						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
-						<label class="label-checkbox100" for="ckb1">
-							Remember me
-						</label>
-					</div>
+						<div class="form-group">
+						  
+						  <select class="form-control" id="usertype">
+						    <option value="admin">Admin</option>
+						    <option value="manager">Manager</option>
+						    
+						  </select>
+						</div>
+					
+					
 
 					<div class="container-login100-form-btn">
 						<button  onclick="manager_login()" class="login100-form-btn">
@@ -92,11 +96,11 @@
 	<script src="../vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 
-
-<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
- <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-messaging.js"></script>
 
 <script>
   // Initialize Firebase

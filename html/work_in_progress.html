@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title> SAGY Activities</title></time>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../css/activities.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         
+         <!-- Latest compiled and minified CSS     -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" href="../css/notification.css">
+</head>
+<body style="background-color: #f2f4f7;" id="body">
+
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content" id="addmodel">
+        <div class="modal-header">
+          <button  type="button" class="close" data-dismiss="modal" id="close-btn">&times;</button>
+          <h4 class="modal-title" id="model-head">Enter Work Details</h4>
+        </div>
+        <div class="modal-body" id="noti-info">
+          
+             
+
+          
+                  <label >Enter Title</label>
+                  <input type="text" class="form-control" id="title">
+                
+                  <label>Enter Description</label>
+                  <textarea rows="4" cols="50" id="description" class="form-control">
+                 </textarea>
+                 
+                  <label>Upload Picture</label>
+                  <input type="file"  accept="image/*" class="form-control" id="notification_image">
+                
+                <button type="submit" class="btn btn-danger" data-dismiss="modal"  id="modal-button">Add Work</button>
+              
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+
+  <!-- model ended -->
+
+       
+
+  
+</div>
+  
+<button class="btn btn-primary" style="margin:30px; " onclick="backtovillage()">Go Back To Village List</button>
+
+ <h1 style=""><center id="villagename"></center></h1>
+
+
+     <button data-toggle="modal" data-target="#myModal" class="btn btn-primary" id="mpadd">Add new Work in Village</button>
+
+
+
+        <!-- The view Modal -->
+<div id="myModalview" class="modal" id="view-info">
+
+  <!-- Modal content -->
+  <div class="modal-content" id="viewmodel">
+   <div class="modal-header">
+    <span class="close" class="close" data-dismiss="modal" >&times;</span>
+    
+  </div>
+  <div class="modal-body" >
+    
+     <h2>Work Information</h2>
+      <table class="table" >
+        <thead>
+          <th>Title</th>
+         
+          <th>Date</th>
+          <th>Image</th>
+        </thead>
+
+        <tr>
+          <td id="titleview"></td>
+          <td id="dateview"></td>
+          <td><img src=""  id="imageview" width="200px" height="100px"></td>
+        </tr>
+      </table>
+
+      <h3>Work Description</h3>
+      <p id="descriptionview"></p>
+
+  
+  </div>
+
+  </div>
+
+</div>
+
+<!-- End Of view Model-->
+        
+        <div>
+        
+        <table class="table"  id="tableshow">
+        <thead>
+            <tr style="background-color: black;padding : 30px;color: #fff">
+            <th>DATE</th>
+            <th>TITLE</th>
+            <th>DESCRIPTION</th>
+            <th>IMAGES</th>
+            <th>ACTION</th>
+            </tr>
+            
+
+    </thead>
+
+      </table>
+    </div>
+
+      
+   
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-messaging.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC4_ha8H0PViLj4wX6_oNShgiB_YdnhR88",
+    authDomain: "sagy-9be59.firebaseapp.com",
+    databaseURL: "https://sagy-9be59.firebaseio.com",
+    projectId: "sagy-9be59",
+    storageBucket: "sagy-9be59.appspot.com",
+    messagingSenderId: "867106039420"
+  };
+  firebase.initializeApp(config);
+</script>
+
+          <script type="text/javascript" src="../js/common.js"></script>
+           <script type="text/javascript" src="../js/workinprogress.js"></script>
+</body>
+</html> 

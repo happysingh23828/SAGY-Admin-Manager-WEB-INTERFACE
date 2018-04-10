@@ -1,3 +1,12 @@
+var village_no = 0;
+
+firebase.database().ref().child("adopted_village").on('child_added' , function (childSnapshot){
+
+  village_no = village_no+1;
+  document.getElementById("village_no").innerHTML =village_no;
+});
+
+
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {

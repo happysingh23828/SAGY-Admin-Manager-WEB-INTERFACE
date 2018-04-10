@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="../css/memberofparliament.css">
            
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-         <script type="text/javascript" src="../js/common.js"></script>
+         
          <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -42,7 +42,7 @@
   <button  class="btn btn-primary" id ="btnhead">
     Edit profile
   </button>
-   <button  id="btnhead" class="btn btn-danger" onclick="">
+   <button  id="btnhead" class="btn btn-danger" onclick="signout()">
     Logout
   </button>
 </div>
@@ -75,14 +75,17 @@
                   <label>Constituency</lae>
                   <input type="text" class="form-control" id="mpconstituency">
              
-                <label>State</label>
-                  <input type="text" class="form-control" id="mpstate">
+                <label style="display: none;">State</label>
+                  <input style="display: none;" type="text" class="form-control" id="mpstate">
              
                 <label>Political Party</label>
                   <input type="text" class="form-control" id="mpparty">
-                
-                <label>Village Adopted</label>
+                  
+                  <div style="display: none;">
+                    
+                  <label>Village Adopted</label>
                   <input type="text" class="form-control" id="mpadoptedvillage">
+                  </div>
                 
                 <div id="upload_image">
                   <label>Upload Profile Picture</label>

@@ -70,37 +70,24 @@
         <div class="modal-body">
           <label>Enter Village Name</label>
           <input type="email" placeholder="Village name" name="email1" id="village_name">
-          <label>Enter Adobted Village*</label>
-          <input type="text" name="email1" placeholder="Adopted By" id="mp_name"><br>
+          <label>Choose Member Of Parliament</label></br>
+          
+          <select id="mp_name">
 
-           <label>Enter Thasil/Block Name*</label>
-          <input type="text" name="email1" placeholder="Tahsil/Block" id="thasil"><br>
+            
+          </select>
 
-           <label>Constituency*</label>&nbsp;&nbsp;&nbsp;&nbsp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;  <label>State*</label><br>
-          <input type="text" name="fname1" placeholder="Constituency" id ="constituency">
-          <input type="text" name="fname1" placeholder="State" id="state"><br>
-
-           <label>Party Name*</label>
-          <input type="text" placeholder="Party" name="email1" id="party"><br>
+         
 
 
-         <div id="upload_image">
-                  <label>Upload Image</label>
-                  <input type="file"  accept="image/*" class="form-control" id="village">
-          </div>
+          
 
-          <div id="update_checkbox_div" style="display: none;">
-                <input type="checkbox" id="update_checkbox" onclick="check()"><p>Update Image</p>  
-                </div>
+        
+
+         
 
 
-                <div id="update_image" style="display: none;"> 
-                  <label>Update Image</label>
-                  <input type="file"  accept="image/*" class="form-control" id="villageupdate" >
-                </div>
-
-
-              <button type="button" class="btn btn-default" id="modal-button" onclick="add_village()" >Add Village</button>
+              <button type="button" class="btn btn-default" id="modal-button"  >Add Village</button>
 
         </div>
         
@@ -115,10 +102,10 @@
 
         <!--<button data-toggle="modal" data-target="#myModal" class="btn btn-primary" id="mpadd">Add new Village Details</button>-->
     <div>
-        <input  id="search" name="search" style="margin: 35px;" type="text" name="" placeholder="Search Adobted Village  Here.....">
+        <input  id="search" name="search" style="margin: 35px;" type="text" name="" placeholder="Search Adopted Village  Here.....">
          <button style="margin: 0px; padding: 10px 20px 10px 20px;font-size: 15px;" class="btn btn-danger" onclick="searchvillage();">Search</button>
 
-         <button style="margin: 30px; padding: 10px 20px 10px 20px;font-size: 15px;" class="btn btn-success" onclick="searchmpall();">All User List</button>
+         <button style="margin: 30px; padding: 10px 20px 10px 20px;font-size: 15px;" class="btn btn-success" onclick="searchmpall();">All Village List</button>
        </div>
 
         
@@ -129,12 +116,11 @@
         <table class="table"  id="tableshow">
         <thead>
             <tr style="background-color: blue;padding : 30px;color: #fff">
-            <th>Adobted_By</th>
+            <th>Adopted_By</th>
             <th>Constituency</th>
             <th>Party</th>
             <th>State</th>
             <th>Village</th>
-            <th>Thasil</th>
             <th>Action</th>
             </tr>
          </thead>

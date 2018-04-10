@@ -1,0 +1,206 @@
+  <!DOCTYPE html>
+<html>
+<head>
+        <title> SAGY MP's</title></time>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../css/memberofparliament.css">
+           
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+         
+         <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body style="background-color: #f2f4f7;" id="body">
+
+       
+
+  
+</div>
+  <span style="font-size:30px;cursor:pointer" ></span>
+
+
+
+<div id= "top-navigation-bar">
+  <button  class="btn btn-primary" id ="btnhead">
+    Edit profile
+  </button>
+   <button  id="btnhead" class="btn btn-danger" onclick="signout()">
+    Logout
+  </button>
+</div>
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button  type="button" class="close" data-dismiss="modal" id="close-btn">&times;</button>
+          <h4 class="modal-title" id="model-head">Enter New Manager Details</h4>
+        </div>
+        <div class="modal-body">
+          
+             
+
+          
+                  <label >Enter Name</label>
+                  <input type="text" class="form-control" id="mname">
+                
+                  <label>Enter Email</label>
+                  <input type="text" class="form-control" id="memail">
+
+                  <label>Enter Mobile No</label>
+                  <input type="text" class="form-control" id="mmobileno">
+                  
+                  <label>Enter Password</label>
+                  <input type="text" class="form-control" id="mpassword">
+             
+                  <label>State</label>
+                  <div class="form-group">
+              
+                    <select class="form-control" id="mstate">
+                      <option value="">------------Select State------------</option>
+                  <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chandigarh">Chandigarh</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+                  <option value="Daman and Diu">Daman and Diu</option>
+                  <option value="Delhi">Delhi</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Lakshadweep">Lakshadweep</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Orissa">Orissa</option>
+                  <option value="Pondicherry">Pondicherry</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttaranchal">Uttaranchal</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="West Bengal">West Bengal</option>
+                      
+                    </select>
+                  </div>
+                  
+                  
+                  </select>
+             
+                <div id="upload_image">
+                  <label>Upload Profile Picture</label>
+                  <input type="file"  accept="image/*" class="form-control" id="mpimagenew">
+                </div>
+
+                <div id="update_checkbox_div" style="display: none;">
+                <input type="checkbox" id="update_checkbox" onclick="check()"><p>Update Image</p>  
+                </div>
+
+
+                <div id="update_image" style="display: none;"> 
+                  <label>Update Profile Picture</label>
+                  <input type="file"  accept="image/*" class="form-control" id="mpimageupdate" >
+                </div>
+                
+
+                <button type="submit" class="btn btn-danger" data-dismiss="modal"  id="modal-button">Add Information</button>
+              
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div> 
+
+  <!-- model ended -->
+     
+        <button data-toggle="modal" data-target="#myModal" class="btn btn-primary" id="mpadd" onclick="addmp()">Add new Manager</button>
+          
+        <div>  
+        <input class="col-sm-7" id="search" name="search" style="margin: 30px;" type="text" name="" placeholder="Search  Manager  Here .....">
+
+        <button style="margin: 30px; padding: 10px 20px 10px 20px;font-size: 15px;" class="btn btn-danger" onclick="searchmp();">Search</button>
+
+
+          <button style="margin: 30px; padding: 10px 20px 10px 20px;font-size: 15px;" class="btn btn-success" onclick="searchmpall();">All Manegers List</button>
+
+        </div>
+
+        
+        
+
+        <div>
+        <table class="table"  id="tableshow">
+        <thead>
+           
+             <tr style="background-color: black;padding : 30px;color: #fff">
+            <th>Name</th>
+            <th>State</th>
+            <th>Email</th>
+            <th>Action</th>
+            </tr>
+
+      </thead>
+
+      </table>
+
+    </div>
+
+    </div>
+
+
+
+
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-messaging.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyC4_ha8H0PViLj4wX6_oNShgiB_YdnhR88",
+    authDomain: "sagy-9be59.firebaseapp.com",
+    databaseURL: "https://sagy-9be59.firebaseio.com",
+    projectId: "sagy-9be59",
+    storageBucket: "sagy-9be59.appspot.com",
+    messagingSenderId: "867106039420"
+  };
+  firebase.initializeApp(config);
+</script>
+
+          
+           <script type="text/javascript" src="../js/admin.js"></script>
+</body>
+</html> 

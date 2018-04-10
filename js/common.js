@@ -57,6 +57,7 @@ function signout() {
   // Sign-out successful.
 
   alert("logout successfully!");
+  localStorage.setItem("usertype","");
   window.location = "../html/manager_login.html";
 
 }).catch(function(error) {
